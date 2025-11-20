@@ -3,6 +3,7 @@
 import {Mistral} from "@mistralai/mistralai";
 import {computed, type Ref, ref} from "vue";
 import { marked } from "marked";
+import {MessageOutputEvent} from "@mistralai/mistralai/src/models/components/messageoutputevent.ts";
 
 const agentInput: Ref<string> = ref("");
 const agentOutput: Ref<string> = ref("");
@@ -30,7 +31,8 @@ const askAgent = async () => {
 
         console.log(JSON.stringify(chunk));
         if (chunk.event === "message.output.delta") {
-            agentOutput.value += chunk.data.content;
+            const messageOutputEvent = chunk.data as MessageOutputEvent;
+            agentOutput.value += messageOutputEvent.content;
         }
 
     }
