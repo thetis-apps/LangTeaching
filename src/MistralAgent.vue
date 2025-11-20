@@ -3,7 +3,7 @@
 import {Mistral} from "@mistralai/mistralai";
 import {computed, type Ref, ref} from "vue";
 import { marked } from "marked";
-import {MessageOutputEvent} from "@mistralai/mistralai/src/models/components/messageoutputevent.ts";
+import type {MessageOutputEvent} from "@mistralai/mistralai/models/components";
 
 const agentInput: Ref<string> = ref("");
 const agentOutput: Ref<string> = ref("");
