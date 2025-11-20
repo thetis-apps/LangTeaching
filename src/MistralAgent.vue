@@ -1,7 +1,9 @@
 <script setup lang="ts">
 
+import { PaperAirplaneIcon } from '@heroicons/vue/20/solid'
+
 import {Mistral} from "@mistralai/mistralai";
-import {computed, type Ref, ref} from "vue";
+import {computed, onMounted, type Ref, ref} from "vue";
 import { marked } from "marked";
 import type {MessageOutputEvent} from "@mistralai/mistralai/models/components";
 
@@ -9,13 +11,22 @@ const agentInput: Ref<string> = ref("");
 const agentOutput: Ref<string> = ref("");
 const renderedOutput = computed(() => marked.parse(agentOutput.value));
 const dialog: Ref<string> = ref("");
+const inProgress: Ref<boolean> = ref(false);
 
 const client = new Mistral({
     serverURL: "https://api.mistral.ai/",
     apiKey: "rtAplrLzyFtXAd5VrUyh6QNofgpSVlrC"
 });
 
+const textarea = ref<HTMLTextAreaElement | null>(null);
+
+onMounted(() => {
+    textarea.value?.focus();
+});
+
 const askAgent = async () => {
+
+    inProgress.value = true;
 
     dialog.value += agentInput.value;
     agentInput.value = "";
@@ -36,20 +47,29 @@ const askAgent = async () => {
         }
 
     }
-
     dialog.value += agentOutput.value;
+
+    inProgress.value = false;
+
+    textarea.value?.focus();
 }
 
 </script>
 
 <template>
-    <div class="mistral-agent" >
-        <h1>Poesi assistent</h1>
-        <form @submit.prevent="askAgent">
-            <textarea type="text" placeholder="Enter your message" v-model="agentInput" cols="90" rows="10"/>
-            <button type="submit">Send</button>
-        </form>
-        <div v-html="renderedOutput"></div>
+    <div class="min-h-screen overflow-y-auto">
+        <div class="w-2/3 mx-auto p-4">
+            <div class="text-gray-700 text-2xl mt-2 mb-2">Poesi assistent</div>
+            <form @submit.prevent="askAgent">
+                <div>
+                    <textarea ref="textarea" class="w-full bg-white p-2 border border-gray-400 rounded-lg" type="text" placeholder="Indtast din tekst" v-model="agentInput" rows="10" :disabled="inProgress"/>
+                </div>
+                <div class="flex justify-end mt-2">
+                    <PaperAirplaneIcon class="h-10 w-10 flex-shrink-0 text-gray-400 cursor-pointer" aria-hidden="true" @click="askAgent" />
+                </div>
+            </form>
+            <div v-html="renderedOutput"></div>
+        </div>
     </div>
 </template>
 
