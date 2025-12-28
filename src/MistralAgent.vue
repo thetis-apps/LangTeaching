@@ -15,8 +15,7 @@ const inProgress: Ref<boolean> = ref(false);
 
 const client = new Mistral({
     serverURL: "https://api.mistral.ai/",
-//    apiKey: "rtAplrLzyFtXAd5VrUyh6QNofgpSVlrC"
-    apiKey: "ag_019b663ba31a7395aea5522f467c879f"
+    apiKey: "rtAplrLzyFtXAd5VrUyh6QNofgpSVlrC"
 });
 
 const textarea = ref<HTMLTextAreaElement | null>(null);
