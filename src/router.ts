@@ -16,6 +16,7 @@ const router = createRouter({
             component: () => import('./MistralAgent.vue'),
             props: {
                 apiKey: 'rtAplrLzyFtXAd5VrUyh6QNofgpSVlrC',
+                agentId: 'ag_019a557a8030742d9c1019ed0867f199',
                 title: 'Poesi assistent'
             }
         },
@@ -24,7 +25,8 @@ const router = createRouter({
             name: 'essay',
             component: () => import('./MistralAgent.vue'),
             props: {
-                apiKey: 'ag_019bb385269e74fbaa07a01852a15016',
+                apiKey: 'rtAplrLzyFtXAd5VrUyh6QNofgpSVlrC',
+                agentId: 'ag_019bb385269e74fbaa07a01852a15016',
                 title: 'Avisartikel assistent'
             }
         }

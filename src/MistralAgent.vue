@@ -15,6 +15,7 @@ const dialog: Ref<string> = ref("");
 const inProgress: Ref<boolean> = ref(false);
 
 const props = defineProps<{
+    agentId: string;
     apiKey: string;
     title: string;
 }>()
@@ -28,12 +29,14 @@ const textarea = ref<HTMLTextAreaElement | null>(null);
 
 onMounted(() => {
     textarea.value?.focus();
+    agentOutput.value = "";
 });
 
 const route = useRoute();
 
 watch(() => route.path, () => {
     nextTick(() => textarea.value?.focus());
+    agentOutput.value = "";
 })
 
 const askAgent = async () => {
@@ -44,7 +47,7 @@ const askAgent = async () => {
     agentInput.value = "";
 
     const response = await client.beta.conversations.startStream({
-        agentId: "ag_019a557a8030742d9c1019ed0867f199",
+        agentId: props.agentId,
         inputs: dialog.value,
     });
 
