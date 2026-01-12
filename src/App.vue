@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import MistralAgent from "@/MistralAgent.vue";
+import AppFrame from "@/AppFrame.vue";
 </script>
 
 <template>
-  <suspense>
-    <MistralAgent />
-  </suspense>
+    <AppFrame />
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>

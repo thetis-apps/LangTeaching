@@ -1,6 +1,10 @@
-import './assets/output.css'
-
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router' // Importer routeren
+import './assets/style.css'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.use(router) // Fortæl appen at den skal bruge routeren
+
+app.mount('#app')
