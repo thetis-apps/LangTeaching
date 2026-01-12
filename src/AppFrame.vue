@@ -37,10 +37,13 @@
                                         <li>
                                             <ul role="list" class="-mx-2 space-y-1">
                                                 <li v-for="item in navigation" :key="item.name">
-                                                    <a :href="item.href" :class="[item.current ? 'bg-indigo-700 text-white dark:bg-indigo-950/25' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white dark:text-indigo-100 dark:hover:bg-indigo-950/25', 'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold']">
-                                                        <component :is="item.icon" :class="[item.current ? 'text-white' : 'text-indigo-200 group-hover:text-white dark:text-indigo-100', 'size-6 shrink-0']" aria-hidden="true" />
+                                                    <router-link :to="item.route"
+                                                                 active-class="bg-indigo-700 text-white dark:bg-indigo-950/25"
+                                                                 class="text-indigo-200 hover:bg-indigo-700 hover:text-white dark:text-indigo-100 dark:hover:bg-indigo-950/25 group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold">
+                                                        <component :is="item.icon"
+                                                                   class="group-[.is-active]:text-white text-indigo-200 group-hover:text-white dark:text-indigo-100 size-6 shrink-0" aria-hidden="true" />
                                                         {{ item.name }}
-                                                    </a>
+                                                    </router-link>
                                                 </li>
                                             </ul>
                                         </li>
