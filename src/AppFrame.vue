@@ -83,6 +83,14 @@
             </div>
         </div>
 
+        <div class="sticky top-0 z-40 flex items-center gap-x-6 bg-indigo-600 px-4 py-4 shadow-sm sm:px-6 lg:hidden dark:bg-indigo-800 dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10">
+            <button type="button" class="-m-2.5 p-2.5 text-indigo-200 hover:text-white lg:hidden" @click="sidebarOpen = true">
+                <span class="sr-only">Open sidebar</span>
+                <Bars3Icon class="size-6" aria-hidden="true" />
+            </button>
+            <div class="flex-1 text-sm/6 font-semibold text-white">Dashboard</div>
+        </div>
+
         <main class="py-10 lg:pl-72">
             <div class="px-4 sm:px-6 lg:px-8">
                 <router-view />
@@ -100,6 +108,7 @@ import {
     NewspaperIcon,
     SparklesIcon,
     XMarkIcon,
+    Bars3Icon
 } from '@heroicons/vue/24/outline'
 
 const navigation = [
