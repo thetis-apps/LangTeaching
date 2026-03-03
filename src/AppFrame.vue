@@ -112,6 +112,9 @@ import {
 } from '@heroicons/vue/24/outline'
 
 const navigation = [
+    { name: 'Hilsner', route: '/greetings', icon: SparklesIcon },
+    { name: 'Familie', route: '/family', icon: SparklesIcon },
+    { name: 'Dato og tid', route: '/date-and-time', icon: SparklesIcon },
     { name: 'Poesi', route: '/poetry', icon: SparklesIcon },
     { name: 'Avisartikler', route: '/essay', icon: NewspaperIcon }
 ]
