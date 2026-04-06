@@ -48,7 +48,7 @@ const router = createRouter({
             props: {
                 apiKey: apiKey,
                 agentId: 'ag_019a557a8030742d9c1019ed0867f199',
-                title: 'Poesi assistent'
+                title: 'Poesi'
             }
         },
         {
@@ -58,7 +58,37 @@ const router = createRouter({
             props: {
                 apiKey: apiKey,
                 agentId: 'ag_019bb385269e74fbaa07a01852a15016',
-                title: 'Avisartikel assistent'
+                title: 'Avisartikel'
+            }
+        },
+        {
+            path: '/rent',
+            name: 'rent',
+            component: () => import('./MistralAgent.vue'),
+            props: {
+                apiKey: apiKey,
+                agentId: 'ag_019d5e09510375168617c6c4f5ad1b79',
+                title: 'Leje af bolig'
+            }
+        },
+        {
+            path: '/travel',
+            name: 'travel',
+            component: () => import('./MistralAgent.vue'),
+            props: {
+                apiKey: apiKey,
+                agentId: 'ag_019d5e1d8c1373de8ed14a6039bda851',
+                title: 'Rejser'
+            }
+        },
+        {
+            path: '/sport',
+            name: 'sport',
+            component: () => import('./MistralAgent.vue'),
+            props: {
+                apiKey: apiKey,
+                agentId: 'ag_019d5e15db1e7376bf8adc7f0a6daf95',
+                title: 'Sport'
             }
         }
     ]

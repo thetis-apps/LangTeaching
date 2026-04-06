@@ -108,15 +108,18 @@ import {
     NewspaperIcon,
     SparklesIcon,
     XMarkIcon,
-    Bars3Icon
+    Bars3Icon, GiftIcon, GlobeAltIcon, TrophyIcon, UsersIcon, HomeModernIcon, ClockIcon
 } from '@heroicons/vue/24/outline'
 
 const navigation = [
-    { name: 'Hilsner', route: '/greetings', icon: SparklesIcon },
-    { name: 'Familie', route: '/family', icon: SparklesIcon },
-    { name: 'Dato og tid', route: '/date-and-time', icon: SparklesIcon },
+    { name: 'Hilsner', route: '/greetings', icon: GiftIcon},
+    { name: 'Familie', route: '/family', icon: UsersIcon },
+    { name: 'Dato og tid', route: '/date-and-time', icon: ClockIcon },
     { name: 'Poesi', route: '/poetry', icon: SparklesIcon },
-    { name: 'Avisartikler', route: '/essay', icon: NewspaperIcon }
+    { name: 'Avisartikler', route: '/essay', icon: NewspaperIcon },
+    { name: 'Leje af bolig', route: '/rent', icon: HomeModernIcon },
+    { name: 'Rejser', route: '/travel', icon: GlobeAltIcon },
+    { name: 'Sport', route: '/sport', icon: TrophyIcon }
 ]
 
 const sidebarOpen = ref(false)
