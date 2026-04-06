@@ -48,7 +48,7 @@ const router = createRouter({
             props: {
                 apiKey: apiKey,
                 agentId: 'ag_019a557a8030742d9c1019ed0867f199',
-                title: 'Poesi'
+                title: 'Poesi oversættelse'
             }
         },
         {
@@ -58,7 +58,7 @@ const router = createRouter({
             props: {
                 apiKey: apiKey,
                 agentId: 'ag_019bb385269e74fbaa07a01852a15016',
-                title: 'Avisartikel'
+                title: 'Avisartikel oversættelse'
             }
         },
         {
