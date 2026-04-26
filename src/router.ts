@@ -90,6 +90,26 @@ const router = createRouter({
                 agentId: 'ag_019d5e15db1e7376bf8adc7f0a6daf95',
                 title: 'Sport'
             }
+        },
+        {
+            path: '/dorm',
+            name: 'dorm',
+            component: () => import('./MistralAgent.vue'),
+            props: {
+                apiKey: apiKey,
+                agentId: 'ag_019dcb00168c75c1a4aa24932c7fe4f4',
+                title: 'Kollegieliv'
+            }
+        },
+        {
+            path: '/shopping',
+            name: 'shopping',
+            component: () => import('./MistralAgent.vue'),
+            props: {
+                apiKey: apiKey,
+                agentId: 'ag_019dcb0f5ad571059272675a72a52439',
+                title: 'Indkøb'
+            }
         }
     ]
 })

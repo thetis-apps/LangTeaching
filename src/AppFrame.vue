@@ -108,7 +108,7 @@ import {
     NewspaperIcon,
     SparklesIcon,
     XMarkIcon,
-    Bars3Icon, GiftIcon, GlobeAltIcon, TrophyIcon, UsersIcon, HomeModernIcon, ClockIcon
+    Bars3Icon, GiftIcon, GlobeAltIcon, TrophyIcon, UsersIcon, HomeModernIcon, ClockIcon, ShoppingCartIcon, HomeIcon
 } from '@heroicons/vue/24/outline'
 
 const navigation = [
@@ -118,6 +118,8 @@ const navigation = [
     { name: 'Leje af bolig', route: '/rent', icon: HomeModernIcon },
     { name: 'Rejser', route: '/travel', icon: GlobeAltIcon },
     { name: 'Sport', route: '/sport', icon: TrophyIcon },
+    { name: 'Kollegieliv', route: '/dorm', icon: HomeIcon },
+    { name: 'Indkøb', route: '/shopping', icon: ShoppingCartIcon },
     { name: 'Poesi oversættelse', route: '/poetry', icon: SparklesIcon },
     { name: 'Avisartikel oversættelse', route: '/essay', icon: NewspaperIcon }
 ]
